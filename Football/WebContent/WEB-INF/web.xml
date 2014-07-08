@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Football</display-name>
+	
+	
+	<!-- defines a servlet -->
+	<servlet>
+		<servlet-name>Football</servlet-name>
+		<servlet-class>Servlet.ParseSchedular</servlet-class>
+		<!-- load-on-startup starts the servlet when the server starts. -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+
+		<servlet-name>Football</servlet-name>
+
+		<url-pattern>/*</url-pattern>
+
+	</servlet-mapping>
+	<env-entry>
+		<description>Minutes to Parse - 1440 minutes = 1 day</description>
+		<env-entry-name>Minutes</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>1440</env-entry-value>
+	</env-entry>
+
+
+</web-app>
